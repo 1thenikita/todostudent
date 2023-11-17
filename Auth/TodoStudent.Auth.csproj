@@ -31,11 +31,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="obj\UserEntity.cs" />
-    </ItemGroup>
-
-
-    <ItemGroup>
       <ProjectReference Include="..\Shared\TodoStudent.Shared.csproj" />
     </ItemGroup>
 

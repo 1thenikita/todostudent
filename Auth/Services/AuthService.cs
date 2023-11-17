@@ -20,7 +20,7 @@ public class AuthService
         UserService = userService;
         Mapper = mapper;
     }
-    
+
     public async Task<ServiceResponse<AuthHelperModel<UserViewModel>>> Authenticate(UserAuthModel model)
     {
         var res = new ServiceResponse<AuthHelperModel<UserViewModel>>();
@@ -47,7 +47,8 @@ public class AuthService
             Token = GetTokenByUser(user)
         };
         res.Status = true;
-
+        res.Name = "Success!";
+        
         return res;
     }
 

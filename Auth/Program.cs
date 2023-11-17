@@ -32,6 +32,7 @@ builder.Services.AddAuthorization(options =>
 #region Services
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<UserService>();
 
 #endregion
 
@@ -63,5 +64,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Create DB.
+
+var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<AuthContext>();
+await db.Database.EnsureCreatedAsync();
 
 app.Run();
