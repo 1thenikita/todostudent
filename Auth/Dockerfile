@@ -11,7 +11,7 @@ WORKDIR "/src/Auth"
 RUN dotnet build -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false --use-current-runtime --self-contained false --no-restore -o /app
+RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false --use-current-runtime --self-contained false --no-restore
 
 FROM base AS final
 WORKDIR /app
